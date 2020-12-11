@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'Home', component: HomeComponent},
   {path: 'Books', component: BooksComponent},
   {path: 'Authors', component: AuthorsComponent},
-  {path: '', component: HomeComponent}
+  {path: '', component: HomeComponent},
+  {path: '**', redirectTo:'Home'}
 ];
 
 @NgModule({
