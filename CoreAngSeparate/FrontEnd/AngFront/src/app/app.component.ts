@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {OAuthService, AuthConfig} from 'angular-oauth2-oidc';
-import { constants } from 'buffer';
 
 export const authConfig: AuthConfig = {
   issuer : 'https://dev-2879688.okta.com/oauth2/default',

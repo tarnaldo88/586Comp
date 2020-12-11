@@ -3,7 +3,7 @@
 </div>
 <div class="container" *ngIf= "getUsername()">
   <button class="btn btn-primary" (click)= "logout()">Logout</button>    
-    <h1>Hello, {{getUsername().name}}</h1> 
+    <h1>Hello,  Professor Rabinovich</h1> 
     <a href="/"
         role="button"
         class="btn btn-outline-primary btn-lg btn-block text-center">
@@ -19,7 +19,7 @@
       <h6>List of Authors</h6>
       <select class="form-control">
         <option *ngFor="let author of authors" value={{author}}>
-          {{author.name}} ID: {{author.authorId}}
+          {{author.Name}} ID: {{author.AuthorId}}
         </option>
       </select>
     <table class="table table-bordered table-striped">
@@ -34,8 +34,8 @@
       <tbody>
 
       <tr *ngFor="let book of books" >
-        <td><span>{{book.bookId}}</span></td>
-        <td><span>{{book.authorId}}</span></td>
+        <td><span>{{book.BookId}}</span></td>
+        <td><span>{{book.AuthorId}}</span></td>
         <td><span>{{book.title}}</span></td>
         <td><span>${{book.price}}</span></td>
       </tr>

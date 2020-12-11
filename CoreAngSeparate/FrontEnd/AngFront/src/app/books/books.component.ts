@@ -75,7 +75,7 @@ export class BooksComponent implements OnInit {
   }
   getUsername(){
     const claims = this.oauthService.getIdentityClaims();
-   
+    
     if(!claims){
       return null;
     }else {

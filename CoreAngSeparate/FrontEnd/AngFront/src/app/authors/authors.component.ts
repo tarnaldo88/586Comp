@@ -60,4 +60,7 @@ export class AuthorsComponent implements OnInit {
       return claims; 
     }
   }
+  getName(){
+    return this.oauthService.getIdentityClaims();
+  }
 }
