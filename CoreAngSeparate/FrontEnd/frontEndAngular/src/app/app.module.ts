@@ -8,8 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { BooksComponent } from './books/books.component';
 import { AuthorsComponent } from './authors/authors.component';
-import { AuthModule } from '@auth0/auth0-angular';
-import { AuthButtonComponent } from './auth-button/auth-button.component';
+
+import {OKTA_CONFIG, OktaAuthGuard, OktaAuthModule} from "@okta/okta-angular";
+
+// const config = {
+//   clientId:'{clientid}',
+//   issuer:'dev-2879688.okta.com',
+//   redirectUri: 'http://localhost:4200/implicit/callback',
+//   scopes: ['openid', 'profile', 'email'],
+//   pkce:true
+// };
 
 @NgModule({
   declarations: [
@@ -17,17 +25,13 @@ import { AuthButtonComponent } from './auth-button/auth-button.component';
     HomeComponent,
     BooksComponent,
     AuthorsComponent,
-    AuthButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    AuthModule.forRoot({
-      domain: 'dev-61wm63i3.us.auth0.com',
-      clientId: 'Vi5QF5IU8wKg3rwFCYNJjLxWcjunyBda'
-    }),
+    OktaAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

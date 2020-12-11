@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout({ returnTo: this.doc.location.origin });
+    //this.auth.logout({ returnTo: this.doc.location.origin });
   }
 
 }

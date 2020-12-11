@@ -1,38 +1,9 @@
 
      
-  
+  <a href="https://dev-2879688.okta.com/home/oidc_client/0oa28wzrvNG7ucqsZ5d6/aln177a159h7Zf52X0g8" role = "button">LOGIN</a>
   <div class="jumbotron">
     <div class="container">
-      <!-- Responsive login button: show if NOT authenticated -->
-     <ul
-     class="navbar-nav d-md-none"
-     *ngIf="(auth.isAuthenticated$ | async) === false"
-   >
-     <button
-       class="btn btn-primary btn-block"
-       id="qsLoginBtn"
-       (click)="loginWithRedirect()"
-     >
-       Log in
-     </button>
-   </ul>
-   <!-- /Responsive login button -->
-
-   <!-- Responsive profile dropdown: show if authenticated -->
-   <ul
-   class="navbar-nav d-md-none justify-content-between"
-   *ngIf="auth.user$ | async as user"
-   style="min-height: 170px;"
- >
-    <fa-icon [icon]="faPowerOff" class="mr-3"></fa-icon>
-    <button
-      class="btn btn-link p-0"
-      id="qsLogoutBtn"
-      (click)="logout()"
-    >
-      Log out
-    </button>
-</ul>
+     
         <div class="row">
             <div class="col-sm">
                 <a href="/Authors"

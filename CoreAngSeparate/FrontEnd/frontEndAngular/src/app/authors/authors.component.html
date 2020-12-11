@@ -8,7 +8,7 @@
      <h4>Our List of Authors</h4>
      <select class="form-control">
         <option *ngFor="let author of authors" value={{author}}>
-          {{author.name}}
+          {{author.Name}}
         </option>
       </select>
     <table class="table table-bordered table-striped">
@@ -20,8 +20,8 @@
       </thead>
       <tbody>
       <tr *ngFor="let author of authors">
-        <td><span>{{author.authorId}}</span></td>
-        <td><span>{{author.name}}</span></td>
+        <td><span>{{author.AuthorId}}</span></td>
+        <td><span>{{author.Name}}</span></td>
       </tr>
       </tbody>
     </table>

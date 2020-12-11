@@ -14,7 +14,7 @@
       <h6>List of Authors</h6>
       <select class="form-control">
         <option *ngFor="let author of authors" value={{author}}>
-          {{author.name}} ID: {{author.authorId}}
+          {{author.Name}} ID: {{author.AuthorId}}
         </option>
       </select>
     <table class="table table-bordered table-striped">
@@ -29,8 +29,8 @@
       <tbody>
 
       <tr *ngFor="let book of books" >
-        <td><span>{{book.bookId}}</span></td>
-        <td><span>{{book.authorId}}</span></td>
+        <td><span>{{book.BookId}}</span></td>
+        <td><span>{{book.AuthorId}}</span></td>
         <td><span>{{book.title}}</span></td>
         <td><span>${{book.price}}</span></td>
       </tr>
