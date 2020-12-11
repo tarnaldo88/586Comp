@@ -1,4 +1,9 @@
-<div class="container">
+<div *ngIf= "!getUsername()"> 
+  <button class="btn btn-primary" (click)= "login()">Login</button>
+</div>
+<div class="container" *ngIf= "getUsername()">
+  <button class="btn btn-primary" (click)= "logout()">Logout</button>    
+    <h1>Hello, {{getUsername().name}}</h1> 
     <a href="/"
         role="button"
         class="btn btn-outline-primary btn-lg btn-block text-center">
