@@ -27,9 +27,10 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let book of books">
+
+      <tr *ngFor="let book of books" >
         <td><span>{{book.bookId}}</span></td>
-        <td><span>{{book.authorId}}</span></td>
+        <td><span>{{book.authorId}}{{author.name}}</span></td>
         <td><span>{{book.title}}</span></td>
         <td><span>${{book.price}}</span></td>
       </tr>
