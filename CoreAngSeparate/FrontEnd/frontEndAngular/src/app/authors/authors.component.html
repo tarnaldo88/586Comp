@@ -1,0 +1,23 @@
+<div class="container">
+    <a href="/"
+        role="button"
+        class="btn btn-outline-primary btn-lg btn-block text-center">
+       <span><i class="fa fa-home"></i></span>
+       <br>Return Home
+     </a>
+     <h4>Our List of Authors</h4>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>AuthorID</th>
+        <th>Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let author of authors">
+        <td><span>{{author.authorId}}</span></td>
+        <td><span>{{author.name}}</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
