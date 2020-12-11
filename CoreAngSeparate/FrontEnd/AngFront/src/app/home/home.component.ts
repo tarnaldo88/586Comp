@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {OAuthService, AuthConfig} from 'angular-oauth2-oidc';
 import { constants } from 'buffer';
+import { Console } from 'console';
 
 export const authConfig: AuthConfig = {
   issuer : 'https://dev-2879688.okta.com/oauth2/default',
   redirectUri: window.location.origin,
-  clientId : "0oa28wzrvNG7ucqsZ5d6"
+  clientId : "0oa28wzrvNG7ucqsZ5d6",
 }
 
 @Component({
@@ -32,11 +33,13 @@ export class HomeComponent implements OnInit {
   }
   getUsername(){
     const claims = this.oauthService.getIdentityClaims();
+   
     if(!claims){
       return null;
     }else {
-      //in tut had claims['name'] but doesnt work right now for reasons unknown
-      return claims['name']; 
+      //in tut had claims['name'] but doesnt work right now for reasons unknown   
+      console.log(claims);   
+      return claims; 
     }
   }
 
