@@ -6,6 +6,11 @@
        <br>Return Home
      </a>
      <h4>Our List of Authors</h4>
+     <select class="form-control">
+        <option *ngFor="let author of authors" value={{author}}>
+          {{author.name}}
+        </option>
+      </select>
     <table class="table table-bordered table-striped">
       <thead>
       <tr>

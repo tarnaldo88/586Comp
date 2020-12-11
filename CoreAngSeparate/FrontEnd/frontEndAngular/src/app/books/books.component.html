@@ -6,6 +6,17 @@
        <br>Return Home
      </a>
      <h4>Our List of Novels</h4>
+     <select class="form-control">
+        <option *ngFor="let book of books" value={{book}}>
+          {{book.title}}
+        </option>
+      </select>
+      <h6>List of Authors</h6>
+      <select class="form-control">
+        <option *ngFor="let author of authors" value={{author}}>
+          {{author.name}} ID: {{author.authorId}}
+        </option>
+      </select>
     <table class="table table-bordered table-striped">
       <thead>
       <tr>

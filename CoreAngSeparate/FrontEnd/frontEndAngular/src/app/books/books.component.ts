@@ -11,6 +11,14 @@ export class Books {
   }
 }
 
+export class Authors {
+  constructor(
+    public AuthorId: number,
+    public Name: string
+  ) {
+  }
+}
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -19,12 +27,14 @@ export class Books {
 export class BooksComponent implements OnInit {
 
   books: Books[] = [];
+  authors: Authors[] = [];
   constructor(
     private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
     this.getBooks();
+    this.getAuthors();
   }
 
   getBooks(){
@@ -32,6 +42,15 @@ export class BooksComponent implements OnInit {
       response => {
         console.log(response);
         this.books = response;
+      }
+    );
+  }
+
+  getAuthors(){
+    this.httpClient.get<any>('http://54.67.104.178/Server/api/Authors').subscribe(
+      response => {
+        console.log(response);
+        this.authors = response;
       }
     );
   }
