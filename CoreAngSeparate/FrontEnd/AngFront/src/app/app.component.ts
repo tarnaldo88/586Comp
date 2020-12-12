@@ -27,7 +27,7 @@ export class AppComponent {
   logout(){
     this.oauthService.logOut();
   }
- get getUsername(){
+ getUsername(){
     const claims = this.oauthService.getIdentityClaims();
     if(!claims){
       return null;

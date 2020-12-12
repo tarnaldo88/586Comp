@@ -24,7 +24,7 @@ import {OAuthModule} from 'angular-oauth2-oidc';
     HttpClientModule,
     OAuthModule.forRoot(),
   ],
-  providers: [],
+  providers: [],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
