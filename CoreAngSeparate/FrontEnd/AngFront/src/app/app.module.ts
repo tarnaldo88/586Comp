@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BooksComponent } from './books/books.component';
 import {OAuthModule} from 'angular-oauth2-oidc';
-
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import {OAuthModule} from 'angular-oauth2-oidc';
     NgbModule,
     HttpClientModule,
     OAuthModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [],  
   bootstrap: [AppComponent]
