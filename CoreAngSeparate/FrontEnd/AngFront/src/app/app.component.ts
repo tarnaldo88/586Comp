@@ -27,6 +27,7 @@ export class AppComponent {
   login(){
     console.log("inside login func");
     this.oauthService.initImplicitFlow();
+    this.login();
   }
   logout(){
     this.oauthService.logOut();

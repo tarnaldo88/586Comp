@@ -66,6 +66,12 @@ export class BooksComponent implements OnInit {
     );
   }
 
+  postAuthor(data: string){
+    let jsonData = JSON.stringify(
+      {name: data}
+    );
+  }
+
   login(){
     console.log("inside login func");
     this.oauthService.initImplicitFlow();
@@ -84,4 +90,13 @@ export class BooksComponent implements OnInit {
       return claims; 
     }
   }
+  //chosenAuth: Author;
+  authorId: 0;
+
+  // showAuth(selected: Author){
+  //   if(this.chosenAuth != selected){
+  //     this.chosenAuth = selected;
+  //     this.authorId = selected.authorId;
+  //   }
+  // }
 }
