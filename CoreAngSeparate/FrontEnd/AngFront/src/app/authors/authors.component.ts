@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {OAuthService, AuthConfig} from 'angular-oauth2-oidc';
 
 export class Authors {
   constructor(
@@ -7,6 +8,12 @@ export class Authors {
     public Name: string
   ) {
   }
+}
+
+export const authConfig: AuthConfig = {
+  issuer : 'https://dev-2879688.okta.com/oauth2/default',
+  redirectUri: window.location.origin,
+  clientId : "0oa28wzrvNG7ucqsZ5d6",
 }
 
 @Component({
@@ -17,9 +24,10 @@ export class Authors {
 export class AuthorsComponent implements OnInit {
 
   authors: Authors[] = [];
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  constructor(private httpClient: HttpClient, private oauthService: OAuthService){
+      this.oauthService.configure(authConfig);
+      this.oauthService.loadDiscoveryDocumentAndTryLogin();
+  }
 
   ngOnInit(): void {
     this.getAuthors();
@@ -34,4 +42,25 @@ export class AuthorsComponent implements OnInit {
     );
   }
 
+  login(){
+    console.log("inside login func");
+    this.oauthService.initImplicitFlow();
+  }
+  logout(){
+    this.oauthService.logOut();
+  }
+  getUsername(){
+    const claims = this.oauthService.getIdentityClaims();
+   
+    if(!claims){
+      return null;
+    }else {
+      //in tut had claims['name'] but doesnt work right now for reasons unknown   
+      console.log(claims);   
+      return claims; 
+    }
+  }
+  getName(){
+    return this.oauthService.getIdentityClaims();
+  }
 }
